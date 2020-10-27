@@ -4,12 +4,11 @@ which git > /dev/null 2>&1
 if [[ $? -eq 1 ]]; then        
         yum install http://opensource.wandisco.com/centos/7/git/x86_64/wandisco-git-release-7-2.noarch.rpm
         yum install git
-        git config --global user.name <Full Name>
-        git config --global user.email <email address>
+        git config --global user.name Shai Kamenker
+        git config --global user.email kamenker92@gmail.com
 else
         echo "git installed"
 fi
----
 
 which docker > /dev/null 2>&1
 if [[ $? -eq 1 ]]; then        
