@@ -18,10 +18,7 @@ else
         systemctl disable nginx
         userdel -r nginx
         
-        rm -rf /etc/nginx
-        rm -rf /var/log/nginx
-        rm -rf /var/cache/nginx/
-        rm -rf /usr/lib/systemd/system/nginx.servic
+        rm -rf /etc/nginx /var/log/nginx /var/cache/nginx /usr/lib/systemd/system/nginx.servic
 
         yum remove -y nginx
     elif [[ $answer = "N" ]]; then
