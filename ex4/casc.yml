@@ -1,0 +1,10 @@
+unclassified:
+  location:
+    url: http://server_ip:8085/
+jenkins:
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+       - id: 
+         password:

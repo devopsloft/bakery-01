@@ -22,11 +22,6 @@ if [[ $? -eq 1 ]]; then
 	chmod 755 /home/shai/Documents/backery/playground/jcasc/ex3/JenkinsHome
 	cd /home/shai/Documents/backery/playground/jcasc/ex3/
 	
-	echo "Please enter the user name"
-    	read userName	
-	echo "Please enter the password"
-	read Pass
-	
 	echo "
                 git:latest
                 github-api:latest
@@ -57,7 +52,7 @@ if [[ $? -eq 1 ]]; then
 
 
 	docker build -t jenkins:jcasc -f Dockerfile .
-	docker run --name myJenkins -u root -d -p 8080:8080 --env JENKINS_ADMIN_ID=$userName --env JENKINS_ADMIN_PASSWORD=$Pass -v /home/shai/Documents/backery/playground/jcasc/ex3/JenkinsHome:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock jenkins:jcasc
+	docker run --name myJenkins -u root -d -p 8080:8080 --env JENKINS_ADMIN_ID=root --env JENKINS_ADMIN_PASSWORD=root -v /home/shai/Documents/backery/playground/jcasc/ex3/JenkinsHome:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock jenkins:jcasc
 else
         echo "jenkins installed"
 fi
