@@ -1,0 +1,6 @@
+git:latest
+github-api:latest
+workflow-aggregator:latest
+python:latest
+pipeline-github-lib:latest
+pipeline-stage-view:latest
