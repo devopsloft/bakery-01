@@ -1,4 +1,4 @@
-FROM python:3.6-buster
+FROM python:3.9-buster
 RUN mkdir /usr/src/app/
 COPY . /usr/src/app/
 WORKDIR /usr/src/app/
