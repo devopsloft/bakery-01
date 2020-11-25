@@ -1,0 +1,53 @@
+version: '3'
+
+services:
+   flask:
+    build: ./Flask
+    depends_on:
+      - db
+    volumes: 
+      - ./Flask:/usr/src/app
+      - ./shared-volume:/usr/shared-volume
+    ports:
+      - 5000:5000
+    environment:
+      PORT: 5000
+      POSTGRES_USER: post
+      POSTGRES_PASSWORD: post
+      POSTGRES_HOST: localhost:5432
+      POSTGRES_DB: post
+      
+    restart: always
+    networks:
+        - bakery
+
+   db:
+      image: postgres:latest
+      environment:
+        POSTGRES_USER: post
+        POSTGRES_PASSWORD: post
+        POSTGRES_HOST: localhost:5432
+        POSTGRES_DB: post
+      volumes:
+        - ./dbdata:/var/lib/postgresql/data
+        - ./shared-volume:/usr/shared-volume
+      ports:
+        - 5432:5432
+      networks:
+        - bakery
+
+volumes:
+  shared-volume:
+  dbdata:
+
+networks:
+  bakery:
+    driver: bridge
+
+
+ 
+  
+
+
+    
+    
