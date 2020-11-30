@@ -1,0 +1,19 @@
+pipeline {
+  agent any
+  stages {
+    stage('Stage 1') {
+      steps {
+        sh 'echo $JOB_NAME'  
+        sh 'echo "current build number: ${currentBuild.number}"'
+      }
+    }
+  }
+  post {
+    success {
+      echo "Pipeline successful"
+   }
+    failure {
+      echo "The pipeline failed :("
+    }
+  }
+}
