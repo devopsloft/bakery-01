@@ -18,9 +18,9 @@ fi
 docker container inspect myJenkins > /dev/null 2>&1
 if [[ $? -eq 1 ]]; then                
         echo "Installing jenkins"
-	mkdir -p /home/shai/Documents/backery/playground/jcasc/ex3/JenkinsHome
-	chmod 755 /home/shai/Documents/backery/playground/jcasc/ex3/JenkinsHome
-	cd /home/shai/Documents/backery/playground/jcasc/ex3/
+	mkdir -p ~/Documents/backery/playground/jcasc/ex3/JenkinsHome
+	chmod 755 ~/Documents/backery/playground/jcasc/ex3/JenkinsHome
+	cd ~/Documents/backery/playground/jcasc/ex3/
 	
 	echo "
                 git:latest
